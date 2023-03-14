@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "NeuroPolitical";
+}
+
+@font-face {
+  font-family: "NeuroPolitical";
+  src: local("NeuroPolitical"),
+  url("./assets/pirulen.otf");
+}
+
+.layout {
+  background-image: url("./sQtEFD.png");
+  background-size: 100% 100%;
+  height: 100dvh;
+}
+
+
+.header {
+  display: flex;
+  justify-content: center;
+  height: 10%;
+  margin-bottom: 1em
+  ;
+}
+
+.navbar {
+  height: 100%;
+  padding-top: 1em;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.navbutton {
+  position: relative;
+  height: 100%;
+  padding: 1.2em 3em;
+  transform: skew(145deg);
+}
+
+.challenges > h1 {
+  transform: skew(145deg);
+} 
+
+.challenges {
+  position: relative;
+}
+
+.jobTitle {
+  position: relative;
+}
+
+.bio {
+  position: relative;
+}
+
+.skill {
+  position: relative;
+}
+
+.project {
+  position: relative;
+}
+
+.new {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
