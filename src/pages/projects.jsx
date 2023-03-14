@@ -51,7 +51,7 @@ export default function Projects() {
     }
 
     const projects = [{
-        image: "../src/battle.png",
+        image: "../battle.png",
         name: "PokeBattle!",
         desc: "API calling using React Router + Axios",
         live: "https://pokebattle-imkewlhuh.vercel.app/",
@@ -59,7 +59,7 @@ export default function Projects() {
         state: pokeBattle,
         check: () => setPokeBattle(true)
     }, {
-        image: "../src/pet.png",
+        image: "../pet.png",
         name: "Pet API",
         desc: "Full Stack application using JWT authorization + CRUD functionality + User Database",
         live: "https://pet-api-nine.vercel.app/",
@@ -67,7 +67,7 @@ export default function Projects() {
         state: petAPI,
         check: () => setPetAPI(true)
     }, {
-        image: "../src/mancala.png",
+        image: "../mancala.png",
         name: "Mancala",
         desc: "Classic Mancala board game using HTML, CSS, and JavaScript",
         live: "https://imkewlhuh.github.io/Mancala/",

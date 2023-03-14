@@ -43,7 +43,7 @@ export default function PassReward(props) {
                     Congratulations! You completed the Battle Pass. You have unlocked:
                     <CardMedia
                         sx={{ borderRadius: "10px", height: "200px", width: "50%", backgroundSize: "100% 100%" }}
-                        image="../src/reward.jpg" />
+                        image="../reward.jpg" />
                     Your New Employee:
                     <br />
                     Rafael Lopez
