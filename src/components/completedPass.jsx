@@ -1,5 +1,5 @@
 import {
-    Card, CardMedia, CardContent, Box,
+    Card, CardMedia, CardContent,
     Modal, Zoom, Backdrop, Fab
 } from "@mui/material";
 import ArticleIcon from '@mui/icons-material/Article';
@@ -43,7 +43,7 @@ export default function PassReward(props) {
                     Congratulations! You completed the Battle Pass. You have unlocked:
                     <CardMedia
                         sx={{ borderRadius: "10px", height: "200px", width: "50%", backgroundSize: "100% 100%" }}
-                        image="../reward.jpg" />
+                        image="../src/reward.jpg" />
                     Your New Employee:
                     <br />
                     Rafael Lopez

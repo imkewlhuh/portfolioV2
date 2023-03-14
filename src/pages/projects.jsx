@@ -51,7 +51,7 @@ export default function Projects() {
     }
 
     const projects = [{
-        image: "../battle.png",
+        image: "../src/battle.png",
         name: "PokeBattle!",
         desc: "API calling using React Router + Axios",
         live: "https://pokebattle-imkewlhuh.vercel.app/",
@@ -59,7 +59,7 @@ export default function Projects() {
         state: pokeBattle,
         check: () => setPokeBattle(true)
     }, {
-        image: "../pet.png",
+        image: "../src/pet.png",
         name: "Pet API",
         desc: "Full Stack application using JWT authorization + CRUD functionality + User Database",
         live: "https://pet-api-nine.vercel.app/",
@@ -67,7 +67,7 @@ export default function Projects() {
         state: petAPI,
         check: () => setPetAPI(true)
     }, {
-        image: "../mancala.png",
+        image: "../src/mancala.png",
         name: "Mancala",
         desc: "Classic Mancala board game using HTML, CSS, and JavaScript",
         live: "https://imkewlhuh.github.io/Mancala/",
@@ -85,7 +85,7 @@ export default function Projects() {
                         let delay = 700 + (600 * i);
                         let key = i + 200;
                         return (
-                            <Project {...project} uniqueId={key} page={projectsPage} handleClear={handleClear} delay={delay} />
+                            <Project {...project} uniqueId={key} page={projectsPage} handleClear={handleClear} delay={delay} class1={"poke"} class2={"pet"} class3={"mancala"} />
                         )
                     })}
                 </Paper>
