@@ -53,8 +53,8 @@ export default function Skills() {
                         const num = skill.level;
                         const lvlUp = `Requires more practice to level up this skill.`;
                         return (
-                            <Grid item xs={12} sm={6} md={4}>
-                                <Zoom timeout={600} style={{ transitionDelay: (delay) }} in="true">
+                            <Grid key={skill.name} item xs={12} sm={6} md={4}>
+                                <Zoom timeout={600} style={{ transitionDelay: (delay) }} in={true} >
                                     <div style={{width: "300px"}} onMouseEnter={skill.check} onMouseLeave={handleClear}>
                                         <Paper elevation={24} className="skill" sx={{
                                             height: "200px", width: "100%", bgcolor: "#00256B",
@@ -72,12 +72,12 @@ export default function Skills() {
                                                 justifyContent: "center", gap: "5px", transform: "skew(145deg)"
                                             }}>
                                                 {
-                                                    rating(num).map(rating => {
+                                                    rating(num).map((rating, i) => {
                                                         return (
                                                             rating ?
-                                                                <Box sx={{ bgcolor: "#01D058", height: "25px", width: "30px" }} />
+                                                                <Box key={i} sx={{ bgcolor: "#01D058", height: "25px", width: "30px" }} />
                                                                 :
-                                                                <Tooltip TransitionComponent={Zoom} TransitionProps={{ timeout: 400 }} title={lvlUp}>
+                                                                <Tooltip key={i + 100} TransitionComponent={Zoom} TransitionProps={{ timeout: 400 }} title={lvlUp}>
                                                                     <Box sx={{ bgcolor: "#014B67", height: "25px", width: "30px" }} />
                                                                 </Tooltip>
                                                         )

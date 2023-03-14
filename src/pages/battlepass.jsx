@@ -1,5 +1,4 @@
 import NewReleasesIcon from '@mui/icons-material/NewReleases';
-import FiberNewIcon from '@mui/icons-material/FiberNew';
 import BeenhereIcon from '@mui/icons-material/Beenhere';
 import {
     Container, Collapse, Paper, Box,
@@ -10,12 +9,12 @@ import useNavStore from '../store.js';
 
 function Tiers(props) {
     return (
-        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem", height: "100%", width: "100%" }}>
-            <Fade timeout={1000} style={{ transitionDelay: 1200 }} in="true" mountOnEnter="true" unmountOnExit="true">
+        <Box key={props.uniqueId} sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem", height: "100%", width: "100%" }}>
+            <Fade timeout={1000} style={{ transitionDelay: 1200 }} in={true} mountOnEnter={true} unmountOnExit={true}>
                 <Box sx={{ width: "170px", height: "80px", bgcolor: "#014B67" }}>
-                    <Collapse timeout={1000} style={{ transitionDelay: 1000 }} orientation="horizontal" in={props.value === 1} mountOnEnter="true" unmountOnExit="true">
+                    <Collapse timeout={1000} style={{ transitionDelay: 1000 }} orientation="horizontal" in={props.value === 1} mountOnEnter={true} unmountOnExit={true}>
                         <Box sx={{ width: "170px", height: "80px", bgcolor: "#01D058", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                            <Zoom timeout={1000} style={{ transitionDelay: (2200 + props.delay) }} in={props.value === 1} mountOnEnter="true" unmountOnExit="true" >
+                            <Zoom timeout={1000} style={{ transitionDelay: (2200 + props.delay) }} in={props.value === 1} mountOnEnter={true} unmountOnExit={true} >
                                 <BeenhereIcon style={{ height: "70%", width: "70%" }} />
                             </Zoom>
                         </Box>
@@ -53,9 +52,9 @@ export default function BattlePass() {
         <Container sx={{ marginTop: "4em" }}>
             <PassReward pass={pass} />
 
-            <Fade timeout={1000} in="true">
+            <Fade timeout={1000} in={true}>
                 <Paper elevation={24} className="battlePass" sx={{ borderRadius: "10px", padding: "2em", bgcolor: "#00256B", color: "#D30077", opacity: "0.9", display: "flex", flexDirection: "column", alignItems: "center", gap: "2em", fontSize: "18px" }} >
-                    <Fade timeout={1000} style={{ transitionDelay: 900 }} in="true">
+                    <Fade timeout={1000} style={{ transitionDelay: 900 }} in={true}>
                         <Card elevation={18} sx={{
                             bgcolor: "#001C58", color: "#FE018E", display: "flex",
                             flexDirection: "column", alignItems: "center", borderRadius: "5px",
@@ -65,12 +64,12 @@ export default function BattlePass() {
                                 Season 1 BattlePass
                             </h2>
                             <CardContent>
-                                Progress the battle pass by viewing each page.
-                                Hover or click each item to clear it and earn XP.
+                                Progress the battle pass by viewing each page.<br />
+                                Hover or click each item to clear {<NewReleasesIcon fontSize='small' />} and earn XP.
                             </CardContent>
                         </Card>
                     </Fade>
-                    <Fade timeout={1000} style={{ transitionDelay: 1200 }} in="true">
+                    <Fade timeout={1000} style={{ transitionDelay: 1200 }} in={true}>
                         <Box sx={{
                             width: "90%", height: "25vh", bgcolor: "#001C58", padding: "1em",
                             display: "flex", alignItems: "center", transform: "skew(145deg)"
@@ -78,7 +77,7 @@ export default function BattlePass() {
                             {pages.map((page, i) => {
                                 const delay = 500 * i;
                                 return (
-                                    <Tiers {...page} delay={delay} />
+                                    <Tiers {...page} uniqueId={i + 300} delay={delay} />
                                 )
                             })}
                         </Box>

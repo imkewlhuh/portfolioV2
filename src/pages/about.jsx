@@ -27,7 +27,7 @@ export default function About() {
 
     return (
         <Container sx={{ marginTop: "4em", width: "70%" }} >
-            <Slide timeout={600} direction="right" in="true" >
+            <Slide timeout={600} direction="right" in={true} >
                 <Box>
                     <Collapse timeout={700} collapsedSize={120} in={expand}>
                         <Card elevation={24} className="bio" sx={{ bgcolor: "#00256B", padding: "1em", maxWidth: "100%", color: "#D30077", opacity: "0.9", textAlign: "center", fontSize: "18px", lineHeight: "1.5" }} >

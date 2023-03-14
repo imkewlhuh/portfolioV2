@@ -13,7 +13,7 @@ function NavBar() {
     return (
         <Box className="header">
             <Box className="navbar">
-                <NavLink style={{ textDecoration: "none" }} to={"home"}>
+                <NavLink style={{ textDecoration: "none" }} to={"play"}>
                     {({ isActive }) => (
                         <Box className="navbutton" bgcolor={isActive ? "#FE018E" : "#00256B"} color={isActive ? "#00256B" : "#FE018E"}>
                             Play

@@ -9,8 +9,8 @@ import useNavStore from "../store.js";
 function Project(props) {
 
     return (
-        <Grow timeout={750} style={{ transitionDelay: (props.delay), transformOrigin: "0 0 0", }} in="true">
-            <Card elevation={18} className="project" sx={{
+        <Grow key={props.delay} timeout={750} style={{ transitionDelay: (props.delay), transformOrigin: "0 0 0", }} in={true}>
+            <Card key={props.uniqueId} elevation={18} className="project" sx={{
                 maxWidth: "30%", bgcolor: "#001C58",
                 color: "#FE018E", display: "flex",
                 flexDirection: "column", textAlign: "center",
@@ -79,12 +79,13 @@ export default function Projects() {
 
     return (
         <Container sx={{ marginTop: "2em" }}>
-            <Fade timeout={900} in="true">
+            <Fade timeout={900} in={true}>
                 <Paper elevation={24} sx={{ borderRadius: "10px", padding: "2em", bgcolor: "#00256B", color: "#D30077", opacity: "0.9", display: "flex", justifyContent: "space-evenly", fontSize: "18px" }} >
                     {projects.map((project, i) => {
                         let delay = 700 + (600 * i);
+                        let key = i + 200;
                         return (
-                            <Project {...project} page={projectsPage} handleClear={handleClear} delay={delay} />
+                            <Project {...project} uniqueId={key} page={projectsPage} handleClear={handleClear} delay={delay} />
                         )
                     })}
                 </Paper>
