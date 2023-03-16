@@ -9,12 +9,12 @@ import useNavStore from '../store.js';
 
 function Tiers(props) {
     return (
-        <Box key={props.uniqueId} sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem", height: "100%", width: "100%" }}>
-            <Fade timeout={1000} style={{ transitionDelay: 1200 }} in={true} mountOnEnter={true} unmountOnExit={true}>
+        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem", height: "100%", width: "100%" }}>
+            <Fade timeout={1000} style={{ transitionDelay: 1200 }} in={true} mountOnEnter unmountOnExit>
                 <Box sx={{ width: "170px", height: "80px", bgcolor: "#014B67" }}>
-                    <Collapse timeout={1000} style={{ transitionDelay: 1000 }} orientation="horizontal" in={props.value === 1} mountOnEnter={true} unmountOnExit={true}>
+                    <Collapse timeout={1000} style={{ transitionDelay: 2000 }} orientation="horizontal" in={props.value === 1} mountOnEnter unmountOnExit>
                         <Box sx={{ width: "170px", height: "80px", bgcolor: "#01D058", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                            <Zoom timeout={1000} style={{ transitionDelay: (2200 + props.delay) }} in={props.value === 1} mountOnEnter={true} unmountOnExit={true} >
+                            <Zoom timeout={1000} style={{ transitionDelay: (2200 + props.delay) }} in={props.value === 1} mountOnEnter unmountOnExit >
                                 <BeenhereIcon style={{ height: "70%", width: "70%" }} />
                             </Zoom>
                         </Box>
@@ -77,7 +77,9 @@ export default function BattlePass() {
                             {pages.map((page, i) => {
                                 const delay = 500 * i;
                                 return (
-                                    <Tiers {...page} uniqueId={i + 300} delay={delay} />
+                                    <Box width={"100%"} key={page.name}>
+                                        <Tiers {...page} delay={delay} />
+                                    </Box>
                                 )
                             })}
                         </Box>
