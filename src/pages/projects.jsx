@@ -61,11 +61,11 @@ export default function Projects() {
         state: pokeBattle,
         check: () => setPokeBattle(true)
     }, {
-        image: "/images/pet.png",
-        name: "Pet API",
-        desc: "Full Stack application using JWT authorization + CRUD functionality + User Database",
-        live: "https://pet-api-nine.vercel.app/",
-        code: "https://github.com/imkewlhuh/PetAPI",
+        image: "/images/capPic.png",
+        name: "InventGenie",
+        desc: "Inventory Management app built with React, React Router, and Bootstrap",
+        live: "https://capstone-group-3-imkewlhuh.vercel.app/home",
+        code: "https://github.com/imkewlhuh/Capstone-Group-3",
         state: petAPI,
         check: () => setPetAPI(true)
     }, {
@@ -85,7 +85,6 @@ export default function Projects() {
                 <Paper elevation={24} sx={{ borderRadius: "10px", padding: "2em", bgcolor: "#00256B", color: "#D30077", opacity: "0.9", display: "flex", justifyContent: "space-evenly", fontSize: "18px" }} >
                     {projects.map((project, i) => {
                         let delay = 700 + (600 * i);
-                        let key = i + 200;
                         return (
                             <Box sx={{ maxWidth: "30%" }} key={project.name}>
                                 <Project {...project} page={projectsPage} handleClear={handleClear} delay={delay} />
